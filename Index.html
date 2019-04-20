@@ -1,0 +1,29 @@
+<html>
+<head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body
+    
+    <form action="" method="post" enctype="multipart/form-data">
+        <input id="input-file" name="file" type="file" onchange="uploadfile(event)" >
+    </form>
+    
+    
+    
+    <script>
+    function uploadfile(event) {
+        event.preventDefault();
+        var file = event.target.files;
+        
+        var image = $("<img class='pre' alt='image' src='"+URL.createObjectURL(file[0])+"'><br><progress class='progressBar' value='0' max='100' style='width:125px;' ></progress>");
+        $("#demo").append(image);
+    
+    }
+    </script>
+    
+    <div id="demo"></div>
+    
+    
+
+</body>
+</html>
